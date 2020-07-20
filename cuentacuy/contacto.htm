@@ -1,0 +1,280 @@
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Carolina Roca" />
+		<meta name="copyright" content="Cuenta Cuy" />
+		<meta name="keywords" content="cuenta cuy, crianza cuyes, cuy, registro inventarios, inventario digital" />
+		<meta name="description" content="Cuenta Cuy, Sistema Digital de Inventario para Crianza de Cuyes" />
+		<title>Contacto</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+		<!-- Latest compiled JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+		<link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet"  href="css/styles.css" />
+	</head>
+
+	<body>
+		<form method="post" name="formdatos">
+			<div class="alert alert-danger display-error" style="display: none;"></div>
+			<div
+				class="container-fluid"
+				style="padding: 1px 0px 0px 0px; background-image: url('images/cuy.png'); background-size: cover;"
+			>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<p align="left" style="margin-top: 10px; margin-bottom: 10px;">
+										<a
+											onmouseover="var img=document['fpAnimswapImgFP8'];img.imgRolln=img.src;img.src=img.lowsrc?img.lowsrc:img.getAttribute?img.getAttribute('lowsrc'):img.src;"
+											onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln"
+											href="somos.htm"
+										>
+											<img
+												border="0"
+												src="images/quienes1.png"
+												width="132"
+												height="25"
+												id="fpAnimswapImgFP8"
+												name="fpAnimswapImgFP8"
+												dynamicanimation="fpAnimswapImgFP8"
+												lowsrc="images/quienes2.png"
+										/></a>
+
+										<a
+											onmouseover="var img=document['fpAnimswapImgFP10'];img.imgRolln=img.src;img.src=img.lowsrc?img.lowsrc:img.getAttribute?img.getAttribute('lowsrc'):img.src;"
+											onmouseout="document['fpAnimswapImgFP10'].src=document['fpAnimswapImgFP10'].imgRolln"
+											href="preguntas1.htm"
+										>
+											<img
+												border="0"
+												src="images/preguntas1.png"
+												width="181"
+												height="25"
+												id="fpAnimswapImgFP10"
+												name="fpAnimswapImgFP10"
+												dynamicanimation="fpAnimswapImgFP10"
+												lowsrc="images/preguntas2.png"
+										/></a>
+
+										<img border="0" src="images/contacto2.png" width="86" height="25" />&nbsp;
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<p style="margin-top: 0; margin-bottom: 0;">
+										<img border="0" src="images/logo%20landing.png" width="331" height="125" />
+									</p>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 5px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+                  <input type="hidden" name="v_place" value="cuenta-cuy">
+									
+                  <input
+										class="form-control"
+										type="text"
+										id="Nombre"
+										name="v_nombre"
+										size="50"
+										placeholder="Nombres y Apellidos / Razón Social"
+										style="
+											border-style: solid;
+											border-width: 1px;
+											color: #ff6600;
+											text-align: center;
+											font-style: italic;
+											font-family: Verdana;
+											background-color: #f5f5f5;
+										"
+									/>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<input
+										class="form-control"
+										oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+										type="text"
+										id="dniruc"
+										name="v_dniruc"
+										size="50"
+										placeholder="DNI / RUC"
+										style="
+											border-style: solid;
+											border-width: 1px;
+											color: #ff6600;
+											text-align: center;
+											font-style: italic;
+											font-family: Verdana;
+											background-color: #f5f5f5;
+										"
+									/>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<input
+										class="form-control"
+										oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+										type="text"
+										id="Celular"
+										name="v_celular"
+										size="50"
+										placeholder="Celular"
+										style="
+											border-style: solid;
+											border-width: 1px;
+											color: #ff6600;
+											text-align: center;
+											font-style: italic;
+											font-family: Verdana;
+											background-color: #f5f5f5;
+										"
+									/>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<input
+										class="form-control"
+										type="email"
+										id="Mail"
+										name="v_email"
+										size="50"
+										placeholder="Correo electrónico"
+										style="
+											border-style: solid;
+											border-width: 1px;
+											color: #ff6600;
+											text-align: center;
+											font-style: italic;
+											font-family: Verdana;
+											background-color: #f5f5f5;
+										"
+									/>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<input
+										class="form-control"
+										type="text"
+										id="Direccion"
+										name="v_direccion"
+										size="50"
+										placeholder="Dirección"
+										style="
+											border-style: solid;
+											border-width: 1px;
+											color: #ff6600;
+											text-align: center;
+											font-style: italic;
+											font-family: Verdana;
+											background-color: #f5f5f5;
+										"
+									/>
+								</div>
+							</div>
+
+							<!--UBIGEO-->
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<select id="department" name="v_department" sige="50" class="form-control"></select>
+								</div>
+							</div>
+
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<select id="province" name="v_province" class="form-control" sige="50"></select>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<select id="district" name="v_district" class="form-control" name="v" sige="50"></select>
+								</div>
+							</div>
+							<!--/END UBIGEO-->
+
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<textarea
+										class="form-control"
+										rows="5"
+										id="Consulta"
+										name="v_consulta"
+										cols="51"
+										placeholder="Consulta o comentario"
+										style="
+											border: 1px solid #ff6600;
+											color: #ff6600;
+											text-align: center;
+											font-style: italic;
+											font-family: Verdana;
+											background-color: #f5f5f5;
+										"
+									></textarea>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-12 col-sm-12 col-md-12col-lg-12">
+									<p align="left" style="margin-top: 0; margin-bottom: 10px; margin-left: 25px;">
+										<font color="#666666" face="Verdana" style="font-size: 9pt;">
+											<input
+												type="checkbox"
+												id="v_masinfo"
+												name="v_masinfo"
+												value="SI"
+												style="border-style: solid; border-width: 1px; color: #ff6600;"
+												checked
+											/> </font
+										><font
+											color="#FFFFFF"
+											face="Verdana"
+											style="font-size: 9pt; font-weight: 700; background-color: #ff6600;"
+										>
+											Deseo más información sobre Cuenta Cuy
+										</font>
+									</p>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 3px;">
+								<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
+								<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+									<p align="left" style="margin-top: 0; margin-bottom: 10px; margin-left: 25px;">
+										<input id="submit" type="Image" src="images/enviar.png" width="90" height="34" name="I1" />
+									</p>
+								</div>
+								<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+									<img border="0" src="images/limpiar.png" width="90" height="34" onclick="Limpiar()" />
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<p style="margin-right: 20px; margin-top: 20px;" class="pull-right">
+								<a href="https://m.me/310026982909999">
+									<img border="0" src="images/msg.png" width="50" height="50" /> </a
+								>&nbsp;&nbsp;
+								<a
+									href="https://api.whatsapp.com/send?phone=51976397059&text=Hola! Quiero informacion sobre Cuenta Cuy!"
+									target="_blank"
+								>
+									<img src="images/whp.png" alt="" width="50" height="50" />
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
