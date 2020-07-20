@@ -1,8 +1,6 @@
 $(document).ready(function () {
 	const _url =
-		window.location.hostname === 'localhost'
-			? 'http://localhost/cc_forms/cuentacuy/php/'
-			: 'http://cuentacuy.com/test/php/';
+		window.location.hostname === 'localhost' ? 'http://localhost/ccuy/cuentacuy/php/' : 'http://cuentacuy.com/php/';
 
 	$('#submit').click(function (e) {
 		e.preventDefault();
