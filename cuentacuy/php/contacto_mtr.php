@@ -39,7 +39,7 @@
 
         if(count($arr) > 0) $info = '';
         foreach ((array) $conn->results() as $row) {
-           $info .= $row['name'] . '\n';
+           $info .= $row['name'] . '</br>';
         }
 
         $subj = "Compradores";
@@ -68,7 +68,7 @@
 
         if(count($arr) > 0) $info = '';
         foreach ((array) $conn->results() as $row) {
-           $info .= $row['name'] . '\n';
+           $info .= $row['name'] . '</br>';
         }
 
         $subj = "Criadores";
@@ -178,26 +178,26 @@
 		global $r_consulta;
 		global $r_masinfo;
 		global $r_type;
-    global $info;
-    global $arr;
-    global $conn;
+		global $info;
+		global $arr;
+		global $conn;
 
-	  $date = $GLOBALS['date'];
+		$date = $GLOBALS['date'];
 
-    $query = "INSERT INTO ccuy_contacto set razon_social = '$r_nombre', dni_ruc = '$r_dniruc', cellular = '$r_celular', 
-              correo_electronico = '$r_email', direction = '$r_direccion', province_id = '$r_provincia', 
-              district_id = '$r_distrito', department_id = '$r_departamento', comments = '$r_consulta', 
-              more_info = '$r_masinfo', date_creation='$date', info='$info', type='$r_type'";
+		$query = "INSERT INTO ccuy_contacto set razon_social = '$r_nombre', dni_ruc = '$r_dniruc', cellular = '$r_celular', 
+				  correo_electronico = '$r_email', direction = '$r_direccion', province_id = '$r_provincia', 
+				  district_id = '$r_distrito', department_id = '$r_departamento', comments = '$r_consulta', 
+				  more_info = '$r_masinfo', date_creation='$date', info='$info', type='$r_type'";
 
-    $r = $conn->insert($query);
-    
-    if($r && count($arr) > 0) {
-      $con_id = $conn->insert_id();
-        foreach($arr as $id){
-          $query = "INSERT INTO ccuy_contacto_type set value='$id', contacto_id='$con_id'";
-          $conn->insert($query);
-        }
-    } 
+		$r = $conn->insert($query);
+		
+		if($r && count($arr) > 0) {
+		  $con_id = $conn->insert_id();
+			foreach($arr as $id){
+			  $query = "INSERT INTO ccuy_contacto_type set value='$id', contacto_id='$con_id'";
+			  $conn->insert($query);
+			}
+		} 
 
 	}
 
@@ -213,47 +213,44 @@
 		GLOBAL $r_departamento;
 		global $r_consulta;
 		global $r_masinfo;
-    global $info;
-    global $subj;
-    global $conn;
+		global $info;
+		global $subj;
+		global $conn;
 
-		if($r_masinfo!="")
-		{
-			$r_masinfo ="Sí, deseo más información sobre $subj";
-		}
+		if($r_masinfo!="") $r_masinfo ="Sí, deseo más información sobre $subj";
 
-    $query = "SELECT ccuy_ubigeo_district.name AS district, department.name AS department, province.name AS province 
-                FROM ccuy_ubigeo_district 
-                INNER JOIN ccuy_ubigeo_department AS department
-                  ON ccuy_ubigeo_district.department_id=department.id 
-                INNER JOIN ccuy_ubigeo_province AS province
-                  ON ccuy_ubigeo_district.province_id=province.id
-                WHERE 
-                  ccuy_ubigeo_district.id='$r_distrito'";
+		$query = "SELECT ccuy_ubigeo_district.name AS district, department.name AS department, province.name AS province 
+					FROM ccuy_ubigeo_district 
+					INNER JOIN ccuy_ubigeo_department AS department
+					  ON ccuy_ubigeo_district.department_id=department.id 
+					INNER JOIN ccuy_ubigeo_province AS province
+					  ON ccuy_ubigeo_district.province_id=province.id
+					WHERE 
+					  ccuy_ubigeo_district.id='$r_distrito'";
 
-    $conn->query($query);
+		$conn->query($query);
 
-    foreach ($conn->results() as $row) {
-        $r_distrito = isset($row['district']) ? $row['district'] : ''; 
-        $r_departamento = isset($row['department']) ? $row['department'] : '';
-        $r_provincia = isset($row['province']) ? $row['province'] : ''; 
-     }
+		foreach ($conn->results() as $row) {
+			$r_distrito = isset($row['district']) ? $row['district'] : ''; 
+			$r_departamento = isset($row['department']) ? $row['department'] : '';
+			$r_provincia = isset($row['province']) ? $row['province'] : ''; 
+		 }
 
-    /* Establecer Variables */
-		$sitename = $subj;
+		/* Establecer Variables */
+    $sitename = $subj;
 		$siteaddress ="http://www.cuentacuy.com";
 
 		//$adminaddress = "ixarlos@gmail.com";
 		$adminaddress = "cuentacuy.peru@gmail.com";
 		
-		$headers = "Content-Type: text/plain; charset=UTF-8" . "\r\n";
+		$headers = "Content-Type: text/html; charset=UTF-8" . "\r\n";
 		$headers .= "From: " . $sitename . " <" . $adminaddress . ">" . "\r\n";
 		
 		$date = $GLOBALS['date'];
 		
-		mail("$adminaddress","Información sobre $subj (Administración)",
-		"Registrado ($date)
-    \n
+		mail($adminaddress,"Información sobre $subj (Administración)",
+		"<pre>Registrado: ($date)
+    
     Nombre: $r_nombre
 		DNI/RUC: $r_dniruc
 		Celular: $r_celular
@@ -263,14 +260,14 @@
 		Provincia: $r_provincia
 		Distrito: $r_distrito
 		Consulta: $r_consulta
-		$r_masinfo
+		$r_masinfo</pre>
     $info
 		"
 		,$headers);
 
 		mail("$r_email","Información sobre $subj (Cliente)",
-		"Gracias por contactarnos y solicitar información sobre $subj. Hemos recepcionado satisfactoriamente esta información.
-		\n
+		"<pre>Gracias por contactarnos y solicitar información sobre $subj. Hemos recepcionado satisfactoriamente esta información.
+		
 		Nombre: $r_nombre
 		DNI/RUC: $r_dniruc
 		Celular: $r_celular
@@ -279,11 +276,9 @@
 		Departamento: $r_departamento
 		Provincia: $r_provincia
 		Distrito: $r_distrito
-		"
+		</pre>"
 		,$headers);
 
-		//header("Location: gracias.htm"); exit;
   }
 
   $conn->close();
-?>
